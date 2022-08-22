@@ -9,10 +9,7 @@ import { useState } from "react";
 
 function App() {
   //Tasks State
-  const [toDo, setToDo] = useState([
-    { id: 1, title: "Task 1", status: false },
-    { id: 2, title: "Task 2", status: false },
-  ]);
+  const [toDo, setToDo] = useState([]);
 
   //Temp state
   const [newTask, setNewTask] = useState("");
@@ -82,26 +79,26 @@ function App() {
       {/* update Task */}
       {updateData && updateData ? (
         <UpdateForm
-        updateData = {updateData}
-        changeTask = {changeTask}
-        updateTask = {updateTask}
-        cancelUpdate = {cancelUpdate}
+          updateData={updateData}
+          changeTask={changeTask}
+          updateTask={updateTask}
+          cancelUpdate={cancelUpdate}
         />
       ) : (
         <AddTaskForm
-          newTask ={newTask}
-         setNewTask ={setNewTask}
-          addTask = {addTask}
-        />      
-        )}
+          newTask={newTask}
+          setNewTask={setNewTask}
+          addTask={addTask}
+        />
+      )}
 
       {toDo && toDo.length ? "" : "No Task.."}
-        <ToDo
-        toDo = {toDo}
-        markDOneTask= {markDOneTask}
-        setUpdateData = {setUpdateData}
-        deleteTask = {deleteTask}
-        />
+      <ToDo
+        toDo={toDo}
+        markDOneTask={markDOneTask}
+        setUpdateData={setUpdateData}
+        deleteTask={deleteTask}
+      />
     </div>
   );
 }
